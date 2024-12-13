@@ -1,0 +1,22 @@
+apiVersion: theme.halo.run/v1alpha1
+kind: Theme
+metadata:
+  # 此字段的值需要和主题文件夹名称一致，否则可能导致部分资源无法正常加载。
+  name: theme-breeze
+spec:
+  displayName: Breeze
+  author:
+    name: Guizimo
+    website: https://github.com/guizimo
+  description: Halo 2.x Theme
+  logo: /themes/theme-hao/assets/images/hao-logo.jpg
+  homepage: https://github.com/guizimo/halo-theme-breeze
+  repo: https://github.com/guizimo/halo-theme-breeze.git
+  issues: https://github.com/guizimo/halo-theme-breeze/issues
+  settingName: "theme-breeze-setting"
+  configMapName: "theme-breeze-configMap"
+  version: "0.0.1"
+  require: ">=2.20.0"
+  license:
+    - name: "GPL-3.0"
+      url: "https://github.com/guizimo/halo-theme-breeze/blob/main/LICENSE"
