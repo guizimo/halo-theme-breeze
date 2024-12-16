@@ -1,0 +1,10 @@
+<nav class="show" id="nav" th:fragment="nav(title)">
+    <div id="nav-group">
+        <!-- 导航栏左侧 -->
+        <div th:replace="~{modules/widgets/nav-left}"/>
+        <!-- 导航栏中间 -->
+        <div th:replace="~{modules/widgets/nav-menu}"/>
+        <!-- 导航栏右侧 -->
+        <div th:replace="~{modules/widgets/nav-right}"/>
+    </div>
+</nav>

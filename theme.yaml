@@ -3,11 +3,45 @@ kind: Theme
 metadata:
   # 此字段的值需要和主题文件夹名称一致，否则可能导致部分资源无法正常加载。
   name: theme-breeze
+  annotations:
+    # Add supports for Halo App Store
+    # https://halo.run/store/apps/app-KgWqR
+    "store.halo.run/app-id": "app-KgWqR"
 spec:
   displayName: Breeze
   author:
     name: Guizimo
     website: https://github.com/guizimo
+  customTemplates:
+    page:
+      - name: 友情链接页面模版
+        description: 支持可预设文本的友链
+        screenshot:
+        file: page_links.html
+      - name: 关于页面模版
+        description: 关于页面
+        screenshot:
+        file: about.html
+      - name: 音乐页面模版
+        description: 音乐页面
+        screenshot:
+        file: music.html
+      - name: 留言板页面模版
+        description: 留言板页面
+        screenshot:
+        file: comments.html
+      - name: 待办清单页面模版
+        description: 待办清单页面
+        screenshot:
+        file: todolist.html
+      - name: 相册页面模版
+        description: 相册页面
+        screenshot:
+        file: album.html
+      - name: 最近评论页面模版
+        description: 最近评论页面
+        screenshot:
+        file: new_comment.html
   description: Halo 2.x Theme
   logo: /themes/theme-hao/assets/images/hao-logo.jpg
   homepage: https://github.com/guizimo/halo-theme-breeze

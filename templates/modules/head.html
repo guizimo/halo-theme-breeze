@@ -1,0 +1,68 @@
+<!-- 公共的 head 部分，可以定义部分 links,scripts,styles -->
+<th:block th:fragment="head(htmlType)">
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="var(--breeze-card-bg)" name="theme-color">
+    <title th:text="${siteTitle}"></title>
+    <link rel="shortcut icon"
+          th:href="@{${#strings.isEmpty(site.favicon) ? assets_link + '/images/hao-logo.jpg' : site.favicon}}"/>
+    <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js"></script>
+    <!--  全局script  -->
+    <script th:src="${assets_link + '/global/global.js' + theme_version}"></script>
+    <script th:src="${assets_link + '/js/breeze.js' + theme_version}"></script>
+    <!--  全局css  -->
+    <link rel="stylesheet" th:href="${assets_link + '/global/global.css' + theme_version}">
+    <!--  执行脚本  -->
+    <script>
+        (win => {
+            // 设置黑暗主题
+            win.activateDarkMode = function () {
+                document.documentElement.setAttribute('data-theme', 'dark')
+                document.documentElement.classList.add('color-scheme-dark')
+                breeze.initThemeColor()
+            }
+            // 设置明亮主题
+            win.activateLightMode = function () {
+                document.documentElement.setAttribute('data-theme', 'light')
+                document.documentElement.classList.remove('color-scheme-dark')
+                breeze.initThemeColor()
+            }
+
+            // 初始化主题【缓存】
+            const theme = breeze.commonLocalStorage.get('theme')
+            const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+            const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+            const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+            const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+            if (theme === undefined) {
+                if (isLightMode) activateLightMode()
+                else if (isDarkMode) activateDarkMode()
+                else if (isNotSpecified || hasNoSupport) {
+                    const now = new Date()
+                    const hour = now.getHours()
+                    const isNight = hour <= 6 || hour >= 18
+                    isNight ? activateDarkMode() : activateLightMode()
+                }
+                window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+                    if (breeze.commonLocalStorage.get('theme') === undefined) {
+                        e.matches ? activateDarkMode() : activateLightMode()
+                    }
+                })
+            } else if (theme === 'light') activateLightMode()
+            else activateDarkMode()
+
+            // 初始化主题【配置】
+            if ("[[${theme.config.style.colorScheme}]]" === 'dark')
+                activateDarkMode()
+            if ("[[${theme.config.style.colorScheme}]]" === 'light')
+                activateLightMode()
+
+        })(window)
+    </script>
+
+    <!-- icon图标 -->
+    <link rel="stylesheet" th:href="${assets_link + '/iconfont/iconfont.css' + theme_version}">
+
+</th:block>

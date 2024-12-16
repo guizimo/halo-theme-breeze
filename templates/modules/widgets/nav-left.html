@@ -1,0 +1,8 @@
+<!-- 导航栏左侧 -->
+<div id="nav-left" >
+    <img id="nav-logo" th:src="${#strings.isEmpty(theme.config.basics.logo)} ? ${site.logo} : ${theme.config.basics.logo}" />
+    <!-- 返回主页 -->
+    <a href="/" id="nav-name" title="返回博客主页">
+        <span th:utext="${#strings.isEmpty(theme.config.basics.siteTitle)} ? ${site.title} : ${theme.config.basics.siteTitle}"></span>
+    </a>
+</div>

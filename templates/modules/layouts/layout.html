@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html th:lang="${#locale.toLanguageTag}"
+      th:fragment="layout(content, htmlType, title, head)"
+      xmlns:th="http://www.thymeleaf.org"
+      th:with="assets_link=${theme.config.other.staticResource.use == 'custom' ? theme.config.other.staticResource.cdn_link : #theme.assets('/')},
+      theme_version = ${ theme.config.other.staticResource.use == 'local' ? '?v='+ theme.spec.version : ''},
+      siteTitle = ${not #strings.isEmpty(title) ?  title  :  #strings.isEmpty(site.subtitle) ? site.title :  site.title +' - ' +site.subtitle }"
+>
+
+<!-- head  -->
+<head>
+    <th:block th:replace="~{modules/head :: head(htmlType = ${htmlType})}"/>
+    <th:block th:if="${head != null}">
+        <th:block th:replace="${head}"/>
+    </th:block>
+</head>
+
+<body>
+
+<!-- 内容 -->
+<th:block th:replace="${content}"></th:block>
+
+</body>
+</html>

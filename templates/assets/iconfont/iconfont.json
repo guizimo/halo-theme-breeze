@@ -1,0 +1,23 @@
+{
+  "id": "4782288",
+  "name": "breeze",
+  "font_family": "iconfont",
+  "css_prefix_text": "breeze-icon-",
+  "description": "breeze",
+  "glyphs": [
+    {
+      "icon_id": "18454964",
+      "name": "白天",
+      "font_class": "light",
+      "unicode": "e663",
+      "unicode_decimal": 58979
+    },
+    {
+      "icon_id": "39341347",
+      "name": "黑夜",
+      "font_class": "night",
+      "unicode": "e8f2",
+      "unicode_decimal": 59634
+    }
+  ]
+}

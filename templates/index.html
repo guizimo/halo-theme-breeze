@@ -1,17 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title th:text="${site.title}"></title>
-</head>
-<body>
-<h1>Hello World!</h1>
-<ul>
-    <li th:each="post : ${posts.items}">
-        <a th:href="@{${post.status.permalink}}" th:text="${post.spec.title}"></a>
-    </li>
-</ul>
-</body>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{modules/layouts/layout :: layout(content = ~{::content}, htmlType = 'index', title = null, head = ~{::head})}">
+
+<!-- head -->
+<th:block th:fragment="head">
+    <th:block th:replace="~{modules/common/open-graph :: open-graph(_title = ${site.title},
+                _permalink = '',
+                _cover = ${theme.config.other.opengraph.image},
+                _excerpt = ${site.seo.description},
+                _type = 'website')}"></th:block>
+</th:block>
+
+<!-- content -->
+<th:block th:fragment="content">
+    <div class="page" id="body-wrap">
+        <!-- 头部导航栏 -->
+        <header id="page-header">
+            <nav th:replace="~{modules/nav :: nav(title = ${siteTitle})}"></nav>
+        </header>
+    </div>
+</th:block>
+
 </html>
