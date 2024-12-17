@@ -17,6 +17,15 @@ body {
     margin: 0;
 }
 
+a {
+    background-color: transparent;
+    color: var(--breeze-title-fontcolor);
+    text-decoration: none;
+    transition: all .3s ease-out 0s;
+    overflow-wrap: break-word;
+    -webkit-user-drag: none;
+}
+
 .nav-button {
     cursor: pointer;
 }
@@ -51,17 +60,10 @@ body {
     overflow: hidden;
 }
 
-#page-header #nav #nav-left #nav-logo {
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    border-radius: 6px;
-}
-
 #page-header #nav #nav-left #nav-name {
-    color: var(--breeze-fontcolor);
-    padding: 0 12px;
-    font-weight: 600;
+    color: var(--breeze-title-fontcolor);
+    font-size: 1.2rem;
+    font-weight: 700;
 }
 
 #page-header #nav #nav-right {

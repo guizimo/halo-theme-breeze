@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "syncToTheme": "node scripts/syncToTheme.js /Users/xxx/halo2-dev/themes/theme-breeze"
   },
   "keywords": [],
   "author": "",

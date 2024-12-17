@@ -30,6 +30,10 @@
     --style-border-dashed: 1px dashed var(--breeze-theme-op);
     --breeze-radius-full: 50px;
     --global-font-size: 16px;
+
+    --nav-font-color: var(--breeze-nav-font-color);
+    --nav-font-weight: 700;
+    --nav-font-size: 15px;
 }
 
 [data-theme=light] {
@@ -68,6 +72,8 @@
     --breeze-card-border: #e3e8f7;
     --breeze-shadow-border: 0 8px 16px -4px #2c2d300c;
     --style-border-forever: 2px solid var(--breeze-main);
+
+    --breeze-title-fontcolor: rgba(12,18,30,.85);
 }
 
 [data-theme=dark] {
@@ -109,4 +115,6 @@
     --style-border-hover: 1px solid var(--breeze-lighttext);
     --style-border-dashed: 1px dashed var(--breeze-theme-op);
     --style-border-forever: 2px solid var(--breeze-lighttext);
+
+    --breeze-title-fontcolor: rgba(251,252,254,.85);
 }
