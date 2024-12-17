@@ -17,6 +17,8 @@
         <!-- 头部导航栏 -->
         <header id="page-header">
             <nav th:replace="~{modules/nav :: nav(title = ${siteTitle})}"></nav>
+            <!-- 第一屏 -->
+            <th:block th:replace="~{modules/header/index-page}"/>
         </header>
     </div>
 </th:block>

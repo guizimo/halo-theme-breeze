@@ -12,6 +12,35 @@ var breeze = {
         breeze.changeThemeColor(themeColor);
     },
 
+    getScript: url => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function () {
+            const loadState = this.readyState
+            if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+            script.onload = script.onreadystatechange = null
+            resolve()
+        }
+        document.head.appendChild(script)
+    }),
+
+    getCSS: (url,id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+            const loadState = this.readyState
+            if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+            link.onload = link.onreadystatechange = null
+            resolve()
+        }
+        document.head.appendChild(link)
+    }),
+
     // 本地存储
     commonLocalStorage: {
         // 设置

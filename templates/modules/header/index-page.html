@@ -1,0 +1,130 @@
+<div class="index-page-header">
+    <div class="index-page-right">
+        tubiao
+    </div>
+    <div class="index-page-content">
+        <div class="index-page-content-top">
+            <!--            <img class="index-page-logo" th:src="${#strings.isEmpty(theme.config.basics.logo)} ? ${site.logo} : ${theme.config.basics.logo}" />-->
+            <div class="index-page-title">Hi, I'm <span
+                    th:utext="${#strings.isEmpty(theme.config.basics.siteTitle)} ? ${site.title} : ${theme.config.basics.siteTitle}"></span>.
+            </div>
+            <div class="index-page-desc">And I Becoming A <span id="typed_role"></span></div>
+        </div>
+        <div class="index-page-content-bottom">Go.</div>
+
+    </div>
+    <div class="index-page-left">
+        <span id="typed_text"></span>
+    </div>
+
+    <style>
+        .index-page-header {
+            height: calc(100vh - 60px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1.5rem;
+            position: relative;
+        }
+
+        .index-page-header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: calc(100vh - 60px);
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(15 23 42 / 0.04)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+            mask-image: linear-gradient(transparent, black);
+            background-position: bottom 1px center;
+        }
+
+        .index-page-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        .index-page-content-top {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .index-page-logo {
+            width: 200px;
+            height: 200px;
+            border-radius: 100%;
+        }
+
+        .index-page-title {
+            font-size: 32px;
+            color: var(--breeze-fontcolor);
+        }
+
+        .index-page-title span {
+            font-weight: bold;
+        }
+
+        .index-page-desc {
+            font-weight: 300;
+            font-size: 32px;
+        }
+
+        .index-page-left {
+            width: 120px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        #typed_text {
+            writing-mode: vertical-rl; /* 文字竖排 */
+            text-orientation: upright; /* 保持文字方向正立 */
+            font-size: 16px;
+            line-height: 1.5;
+            height: 400px;
+        }
+
+
+    </style>
+
+    <script th:inline="javascript">
+      function subtitleType() {
+        // 文字
+        fetch("https://v1.hitokoto.cn").then((t => t.json())).then((t => {
+          {
+            const text = `${t.hitokoto} <br>出自「${t.from}」`
+            window.typed = new Typed("#typed_text", {
+              strings: [text],
+              startDelay: 300,
+              typeSpeed: 100,
+              loop: false,
+              showCursor: false
+            })
+          }
+        }))
+
+        if ([[${theme.config.basics.roles}]]) {
+          const n = [[${theme.config.basics.roles}]].map((item) => {
+            return `${item}.`;
+          });
+          window.typed = new Typed("#typed_role", {
+            strings: n,
+            startDelay: 300,
+            typeSpeed: 100,
+            loop: !0,
+            backSpeed: 50
+          })
+        }
+
+      }
+
+      // 防止加载文字太短时第一个自定义文字显示不出来
+      setTimeout(() => {
+        "function" == typeof Typed ? subtitleType() : breeze.getScript("https://npm.elemecdn.com/typed.js@2.0.12/lib/typed.min.js").then(subtitleType)
+      }, 1800)
+    </script>
+</div>
