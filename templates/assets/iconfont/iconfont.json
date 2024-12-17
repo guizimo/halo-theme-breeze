@@ -6,6 +6,62 @@
   "description": "breeze",
   "glyphs": [
     {
+      "icon_id": "5387588",
+      "name": "箭头向下",
+      "font_class": "bottom",
+      "unicode": "eb0a",
+      "unicode_decimal": 60170
+    },
+    {
+      "icon_id": "7140587",
+      "name": "邮箱",
+      "font_class": "email",
+      "unicode": "e645",
+      "unicode_decimal": 58949
+    },
+    {
+      "icon_id": "8827242",
+      "name": "rss",
+      "font_class": "rss",
+      "unicode": "e943",
+      "unicode_decimal": 59715
+    },
+    {
+      "icon_id": "9307591",
+      "name": "github",
+      "font_class": "github",
+      "unicode": "e690",
+      "unicode_decimal": 59024
+    },
+    {
+      "icon_id": "20647590",
+      "name": "TikTok",
+      "font_class": "tiktok",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "33431883",
+      "name": "知乎",
+      "font_class": "zhihu",
+      "unicode": "e809",
+      "unicode_decimal": 59401
+    },
+    {
+      "icon_id": "39315988",
+      "name": "X",
+      "font_class": "x",
+      "unicode": "e7d7",
+      "unicode_decimal": 59351
+    },
+    {
+      "icon_id": "41724910",
+      "name": "B站",
+      "font_class": "blbl",
+      "unicode": "e63e",
+      "unicode_decimal": 58942
+    },
+    {
       "icon_id": "42250121",
       "name": "主题模式",
       "font_class": "theme-mode",

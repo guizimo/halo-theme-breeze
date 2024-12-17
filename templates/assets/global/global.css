@@ -43,7 +43,7 @@ a {
 }
 
 #page-header #nav #nav-group {
-    max-width: 1400px;
+    max-width: 1000px;
     width: 100%;
     display: flex;
     padding: 0 1.5rem;
@@ -58,6 +58,12 @@ a {
     align-items: center;
     margin-right: 1.5rem;
     overflow: hidden;
+}
+
+#page-header #nav #nav-left #nav-logo {
+   width: 40px;
+    height: 40px;
+    border-radius: 12px;
 }
 
 #page-header #nav #nav-left #nav-name {
@@ -89,7 +95,6 @@ a {
 
 #page-header #nav #nav-menu .menus_item .site-page {
     padding-left: 0.7rem;
-    font-weight: bold;
     height: 35px;
     line-height: 35px;
     border-radius: 40px;
