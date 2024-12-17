@@ -6,18 +6,11 @@
   "description": "breeze",
   "glyphs": [
     {
-      "icon_id": "18454964",
-      "name": "白天",
-      "font_class": "light",
-      "unicode": "e663",
-      "unicode_decimal": 58979
-    },
-    {
-      "icon_id": "39341347",
-      "name": "黑夜",
-      "font_class": "night",
-      "unicode": "e8f2",
-      "unicode_decimal": 59634
+      "icon_id": "42250121",
+      "name": "主题模式",
+      "font_class": "theme-mode",
+      "unicode": "e64b",
+      "unicode_decimal": 58955
     }
   ]
 }

@@ -62,8 +62,41 @@ a {
 
 #page-header #nav #nav-left #nav-name {
     color: var(--breeze-title-fontcolor);
-    font-size: 1.2rem;
+    font-size: 20px;
     font-weight: 700;
+}
+
+#page-header #nav #nav-menu {
+
+}
+
+#page-header #nav #nav-menu .menus_items {
+    transition: 0.3s;
+    height: 40px;
+    margin: auto 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#page-header #nav #nav-menu .menus_item {
+    padding: 0 0.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+
+#page-header #nav #nav-menu .menus_item .site-page {
+    padding-left: 0.7rem;
+    font-weight: bold;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 40px;
+    cursor: pointer;
+    color: var(--breeze-title-fontcolor);
+    transition: 0.3s;
+    font-size: 16px;
 }
 
 #page-header #nav #nav-right {
