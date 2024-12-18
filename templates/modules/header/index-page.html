@@ -3,10 +3,10 @@
     <div class="index-page-box">
         <div class="index-page-content">
             <div class="index-page-content-top">
-                <div class="index-page-title">Hi, I'm <span
-                        th:utext="${#strings.isEmpty(theme.config.basics.siteTitle)} ? ${site.title} : ${theme.config.basics.siteTitle}"></span>.
+                <div class="index-page-title"><span
+                        th:utext="${#strings.isEmpty(theme.config.basics.siteTitle)} ? ${site.title} : ${theme.config.basics.siteTitle}"></span>
                 </div>
-                <div class="index-page-desc">And I Becoming A <span id="typed_role"></span></div>
+                <div class="index-page-desc">Hi, I'm  A <span id="typed_role"></span></div>
             </div>
             <div class="index-page-content-social">
                 <th:block th:with="socialMedias = ${theme.config.index.social_media.socialMedia}">
@@ -113,15 +113,18 @@
         .index-page-title {
             font-size: 44px;
             color: var(--breeze-fontcolor);
+            font-family: "AnnieUseYourTelescope", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei";
         }
 
         .index-page-title span {
             font-weight: bold;
+            font-size: 50px;
         }
 
         .index-page-desc {
             font-weight: 300;
             font-size: 36px;
+            font-family: "AnnieUseYourTelescope", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei";
         }
 
         .index-page-right {
@@ -151,6 +154,8 @@
         #typed_role {
             font-weight: bold;
             text-decoration: underline; /* 在文字底部添加一条横线 */
+            color: var(--breeze-theme);
+            font-family: "Peralta", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei";
         }
 
 
@@ -179,9 +184,9 @@
           window.typed = new Typed("#typed_role", {
             strings: n,
             startDelay: 100,
-            typeSpeed: 200,
+            typeSpeed: 220,
             loop: !0,
-            backSpeed: 50
+            backSpeed: 100
           })
         }
 

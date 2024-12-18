@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "syncToTheme": "node scripts/syncToTheme.js C:\\Users\\Administrator\\halo2-dev\\themes\\theme-breeze"
+    "syncToTheme": "node scripts/syncToTheme.js /Users/tanglei/halo2-dev/themes/theme-breeze"
   },
   "keywords": [],
   "author": "",

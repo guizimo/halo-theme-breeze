@@ -31,13 +31,13 @@
     --breeze-radius-full: 50px;
     --global-font-size: 16px;
 
-    --nav-font-color: var(--breeze-nav-font-color);
+    --nav-font-color: var(--breeze-title-fontcolor);
     --nav-font-weight: 700;
     --nav-font-size: 15px;
 }
 
 [data-theme=light] {
-    --breeze-theme: #425AEF;
+    --breeze-theme: #3e64ff;
     --breeze-theme-op: #4259ef23;
     --breeze-theme-op-deep: #4259efdd;
     --breeze-theme-op-light: #4259ef0d;

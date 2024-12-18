@@ -1,4 +1,5 @@
 @import url('./variables.css');
+@import url('./fonts.css');
 
 html {
     height: 100%;
@@ -86,7 +87,7 @@ a {
 }
 
 #page-header #nav #nav-menu .menus_item {
-    padding: 0 0.4rem;
+    padding: 0 0.6rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -94,14 +95,16 @@ a {
 }
 
 #page-header #nav #nav-menu .menus_item .site-page {
-    padding-left: 0.7rem;
     height: 35px;
     line-height: 35px;
     border-radius: 40px;
-    cursor: pointer;
     color: var(--breeze-title-fontcolor);
     transition: 0.3s;
     font-size: 16px;
+}
+
+#page-header #nav #nav-menu .menus_item .site-page:hover {
+    color: var(--breeze-theme);
 }
 
 #page-header #nav #nav-right {
