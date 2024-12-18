@@ -74,6 +74,7 @@
     --style-border-forever: 2px solid var(--breeze-main);
 
     --breeze-title-fontcolor: rgba(12,18,30,.85);
+    --bg-opacity: #ffffffb8
 }
 
 [data-theme=dark] {

@@ -1,4 +1,5 @@
 <nav class="show" id="nav" th:fragment="nav(title)">
+    <div id="nav-bg"></div>
     <div id="nav-group">
         <!-- 导航栏左侧 -->
         <div th:replace="~{modules/widgets/nav-left}"/>
@@ -7,4 +8,26 @@
         <!-- 导航栏右侧 -->
         <div th:replace="~{modules/widgets/nav-right}"/>
     </div>
+    <script>
+      // 获取显示滚动位置的元素
+      const navBgEl = document.getElementById('nav-bg');
+      // 监听滚动事件
+      window.addEventListener('scroll', () => {
+        // 获取滚动位置
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        if (scrollTop > 10 && scrollTop <= 20) {
+          navBgEl.style.opacity = 0.2;
+        } else if (scrollTop > 10 && scrollTop <= 30) {
+          navBgEl.style.opacity = 0.4;
+        } else if (scrollTop > 30 && scrollTop <= 60) {
+          navBgEl.style.opacity = 0.6;
+        } else if (scrollTop > 60 && scrollTop <= 80) {
+          navBgEl.style.opacity = 0.8;
+        } else if (scrollTop > 80) {
+          navBgEl.style.opacity = 1;
+        } else {
+          navBgEl.style.opacity = 0;
+        }
+      });
+    </script>
 </nav>

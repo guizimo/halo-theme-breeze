@@ -18,7 +18,7 @@
                     </a>
                 </th:block>
             </div>
-            <div class="index-page-content-bottom">Go.</div>
+            <div class="index-page-content-bottom" id="scrollButton">Go.</div>
 
         </div>
 <!--        <div class="index-page-left">-->
@@ -175,6 +175,20 @@
     </style>
 
     <script th:inline="javascript">
+
+      const button = document.getElementById('scrollButton');
+
+      button.addEventListener('click', () => {
+        // 获取当前屏幕的高度
+        const screenHeight = window.innerHeight;
+
+        // 滚动一屏的距离
+        window.scrollBy({
+          top: screenHeight, // 垂直方向滚动一屏
+          behavior: 'smooth' // 平滑滚动效果
+        });
+      });
+
       function subtitleType() {
         // 文字
         // fetch("https://v1.hitokoto.cn").then((t => t.json())).then((t => {
