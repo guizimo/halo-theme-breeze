@@ -10,10 +10,10 @@
             </div>
             <div class="index-page-content-social">
                 <th:block th:with="socialMedias = ${theme.config.index.social_media.socialMedia}">
-                    <a th:class="${socialMedia.option_social_data == 'custom' ? 'custom_socials' : 'deal_link'}" rel="external nofollow" target="_blank" th:each="socialMedia : ${socialMedias}"
+                    <a th:class="${socialMedia.option_social_data == 'custom' ? 'custom_socials' : 'deal_link magictime swap'}" rel="external nofollow" target="_blank" th:each="socialMedia : ${socialMedias}"
                        th:href="${socialMedia.url}" th:title="${socialMedia.name}">
                         <i th:if="${socialMedia.option_social_data == 'icon'  || #strings.isEmpty(socialMedia.option_social_data)}"
-                           th:class="${socialMedia.icon}"></i>
+                           th:class="${socialMedia.icon}" style="font-size: 1.2rem;"></i>
                         <th:block th:if="${socialMedia.option_social_data == 'custom'}" th:utext="${socialMedia.icon}"></th:block>
                     </a>
                 </th:block>
@@ -80,6 +80,18 @@
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+
+        .custom_socials {
+
+        }
+
+        .deal_link {
+            font-size: 20px;
+        }
+
+        .custom_socials_icon {
+            font-size: 20px;
         }
 
         .index-page-content-bottom {
@@ -157,6 +169,7 @@
             color: var(--breeze-theme);
             font-family: "Peralta", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei";
         }
+
 
 
     </style>

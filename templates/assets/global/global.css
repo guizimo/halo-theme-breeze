@@ -27,6 +27,11 @@ a {
     -webkit-user-drag: none;
 }
 
+.magictime {
+    -webkit-animation-duration: 3s !important;
+    animation-duration: 3s !important;
+}
+
 .nav-button {
     cursor: pointer;
 }
